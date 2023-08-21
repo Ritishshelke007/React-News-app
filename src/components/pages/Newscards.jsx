@@ -6,6 +6,10 @@ import defImg from "./defaultImg.jpg";
 const Newscards = (props) => {
   let { image, title, date, body, url } = props;
 
+  const onImageError = (e) => {
+    e.target.src = defImg;
+  };
+
   return (
     <div
       key={url}
@@ -16,6 +20,7 @@ const Newscards = (props) => {
           src={image ? image : defImg}
           alt="image"
           className="w-[300px] h-[150px] object-cover"
+          onError={onImageError}
         />
       </div>
       <div className="px-3 pt-3 overflow-hidden">

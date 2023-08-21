@@ -6,6 +6,9 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./components/pages/Home";
 import Loader from "./components/Loader";
 import LoadingBar from "react-top-loading-bar";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 function App() {
   const apiKey = import.meta.env.VITE_NEWS;
@@ -36,6 +39,7 @@ function App() {
 
   return (
     <>
+      <SkeletonTheme></SkeletonTheme>
       <LoadingBar
         color="#2998FF"
         height={3}
@@ -43,7 +47,7 @@ function App() {
         onLoaderFinished={() => setProgress(0)}
       />
       <Navbar />
-      <Loader show={loading} />
+      {/* <Loader show={loading} /> */}
       <Routes>
         <Route
           path="/"
@@ -53,6 +57,7 @@ function App() {
               setProgress={setProgress}
               apiKey={apiKey}
               category="India"
+              loading={loading}
             />
           }
         />
@@ -64,6 +69,7 @@ function App() {
               setProgress={setProgress}
               apiKey={apiKey}
               category="Top news"
+              loading={loading}
             />
           }
         />
@@ -75,6 +81,7 @@ function App() {
               setProgress={setProgress}
               apiKey={apiKey}
               category="asia"
+              loading={loading}
             />
           }
         />
@@ -86,6 +93,7 @@ function App() {
               setProgress={setProgress}
               apiKey={apiKey}
               category="europe"
+              loading={loading}
             />
           }
         />
