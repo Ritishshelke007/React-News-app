@@ -31,6 +31,7 @@ const Home = (props) => {
       props.setProgress(70);
       setArticles(res.news);
       props.setProgress(100);
+      props.setLoading(false);
     } catch (error) {}
   };
 

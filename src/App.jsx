@@ -12,7 +12,7 @@ import { SkeletonTheme } from "react-loading-skeleton";
 
 function App() {
   const apiKey = import.meta.env.VITE_NEWS;
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -53,11 +53,12 @@ function App() {
           path="/"
           element={
             <Home
-              key={"India"}
+              key="India"
               setProgress={setProgress}
               apiKey={apiKey}
               category="India"
               loading={loading}
+              setLoading={setLoading}
             />
           }
         />
