@@ -13,9 +13,9 @@ const Newscards = (props) => {
   return (
     <div
       key={url}
-      className="mx-auto w-[300px] h-[450px] shadow-lg rounded-lg  overflow-y-hidden"
+      className="mx-auto w-[300px] h-[450px] hover:shadow-2xl rounded-lg  overflow-hidden"
     >
-      <div>
+      <div className="overflow-hidden hover:scale-110 transition-all ease-in-out duration-500">
         <img
           src={image ? image : defImg}
           alt="image"
